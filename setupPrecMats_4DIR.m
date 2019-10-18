@@ -12,6 +12,9 @@
 % FIRST VER.:   2016-06-09
 % REVISED:      
 %
+%
+% Modified:     2019-10 David Abramian
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 function [QList,GList] = spm_svb_setupPrecMats(QTypes,N,sz,bmask,ndim,sliceNbr,plotResult)

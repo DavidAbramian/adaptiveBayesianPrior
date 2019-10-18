@@ -42,7 +42,9 @@ VBMethod = 'SVB2D';
 MCMCMethod = 'MCMC2D';
 samplingMethod = 'PCG';
 % c = tic;
-% runMCMC_Per(dS,MCMCMethod,VBMethod,samplingMethod);
+% runMCMC_UGL(dS,MCMCMethod,VBMethod,samplingMethod);
+% runMCMC_4DIR(dS,MCMCMethod,VBMethod,samplingMethod);
+runMCMC_ANYDIR(dS,MCMCMethod,VBMethod,samplingMethod);
 % d = toc(c);
 
 % Requires Tools for NIfTI and ANALYZE image Matlab-package

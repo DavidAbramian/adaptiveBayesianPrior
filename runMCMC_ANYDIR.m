@@ -17,8 +17,11 @@
 % FIRST VER.:   2016-06-09
 % REVISED:      2017-10-27
 %
+%
+% Modified:     2019-10 David Abramian
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function runMCMC(dS,estimationMethod,VBMethod,samplingMethod)
+function runMCMC_ANYDIR(dS,estimationMethod,VBMethod,samplingMethod)
 %% Run
 
 % Read settings
@@ -93,17 +96,17 @@ for iLb = 9
     for k = 1:K
         BTypes{k} = 'LI';
     end
-    [BList,GwList] = setupPrecMats(BTypes,N,sz,bmask,ndim);
+%     [BList,GwList] = setupPrecMats(BTypes,N,sz,bmask,ndim);
 %     [BList,GwList] = setupPrecMats_simple_model(BTypes,N,sz,bmask,ndim,sliceNbrs(iLb),0);
-%     [BList,GwList] = setupPrecMats_better_simple_model(BTypes,N,sz,bmask,ndim,sliceNbrs(iLb),0);
+    [BList,GwList] = setupPrecMats_better_simple_model(BTypes,N,sz,bmask,ndim,sliceNbrs(iLb),0);
     if isGLMNoiseAR
         JTypes = {''};
         for p = 1:P
             JTypes{p} = 'LI';
         end
-        [JList,GaList] = setupPrecMats(JTypes,N,sz,bmask,ndim);
+%         [JList,GaList] = setupPrecMats(JTypes,N,sz,bmask,ndim);
 %         [JList,GaList] = setupPrecMats_simple_model(JTypes,N,sz,bmask,ndim,sliceNbrs(iLb),0);
-%         [JList,GaList] = setupPrecMats_better_simple_model(JTypes,N,sz,bmask,ndim,sliceNbrs(iLb),0);
+        [JList,GaList] = setupPrecMats_better_simple_model(JTypes,N,sz,bmask,ndim,sliceNbrs(iLb),0);
     end
 
     % Initialize Gibbs
